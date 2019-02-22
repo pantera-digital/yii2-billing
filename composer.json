@@ -1,0 +1,23 @@
+{
+  "name": "pantera-digital/yii2-billing",
+  "type": "yii2-extension",
+  "authors": [
+    {
+      "name": "webmayak",
+      "email": "web-mayak@mail.ru"
+    },
+    {
+      "name": "numkms",
+      "email": "numkms@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "yiisoft/yii2": "~2.0.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "pantera\\billing\\": ""
+    }
+  }
+}
