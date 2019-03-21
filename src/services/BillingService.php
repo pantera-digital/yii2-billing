@@ -1,11 +1,16 @@
 <?php
 
-namespace panteraBilling\services;
+namespace pantera\billing\services;
+
+use pantera\billing\models\FinanceTransaction;
+use pantera\billing\models\Balance;
+use Yii;
+use yii\base\BaseObject;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class BillingService
- * @package app\modules\finance\services
- * @property BillManager $billManager
+ * @package pantera\billing\services
  */
 class BillingService extends BaseObject
 {
@@ -60,8 +65,10 @@ class BillingService extends BaseObject
             'comment' => $comment,
             'balance_id' => $balance->id,
         ]);
+        //TODO: придумать чтобы было без этого
         $balance->amount = $balanceAfterAmount;
         $balance->save();
+
         $this->addTransaction($transaction);
         return $this->transactions;
     }
@@ -94,6 +101,7 @@ class BillingService extends BaseObject
         $this->addTransaction($transaction);
         $balance->amount = $balanceAfterAmount;
         $balance->save();
+
         return $this->transactions;
     }
 
